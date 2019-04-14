@@ -37,7 +37,6 @@ class Navigation extends Component {
               aria-expanded="false"
               data-target="navMenu"
               onClick={this.navToggle}
-              href="#nope"
             >
               <span aria-hidden="true" />
               <span aria-hidden="true" />
@@ -64,7 +63,7 @@ class Navigation extends Component {
                   activeClassName="is-active"
                   exact={true}
                 >
-                  <p className="has-text-purple">Jobs</p>
+                  <p className="has-text-purple">Blocs</p>
                 </NavLink>
               </div>
                       </div>
