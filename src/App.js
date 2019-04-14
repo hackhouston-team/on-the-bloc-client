@@ -70,6 +70,11 @@ class App extends Component {
   };
 
   // bloc methods
+  getBlocs = async id => {
+    return await apiService.getBlocs(id);
+  } 
+
+
   getBlocById = async id => {
     return await apiService.getBloc(id);
   };
@@ -104,6 +109,7 @@ class App extends Component {
             (props) => (
               <Blocs
                 {...props}
+                getBlocs={this.getBlocs}
                 addBloc={this.createBloc}
               />
             )

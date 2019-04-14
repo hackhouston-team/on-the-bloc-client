@@ -1,16 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import BlocModal from '../modalForm/modalForm';
 
-export default ({ blocs, addBloc, history }) => {
+export default ({ addBloc, getBlocs, history }) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [blocs, setBlocs] = useState([]);
 
-  if (!blocs) {
-    blocs = [
-      {id: 1, name: 'Work'},
-      {id: 2, name: 'School'},
-      {id: 3, name: 'Personal'},
-    ]
+  useEffect(
+    () => {
+      async function userBlocs() {
+        const user = await (getBlocs('elyalamillo'));
+        
+        if (user) {
+          setBlocs(user.data.blocSummaries)
+        }
+      }
+      userBlocs();
+    }
+    , [])
+
+  async function submitBloc(text) {
+    const newBloc = await addBloc('elyalamillo', text);
+
+    if (newBloc) {
+      setBlocs([...blocs, newBloc])
+    }
   }
 
   return (
@@ -25,6 +39,8 @@ export default ({ blocs, addBloc, history }) => {
                   onClick={() => history.push(`/bloc/${bloc.id}`)}
                   className="box box-is-70">
                   <p className="title is-4 is-spaced">{bloc.name}</p>
+                  <p className="is-spaced">{bloc.creator}</p>
+                  <p className="title is-5 is-spaced">{bloc.messageCount}</p>
                 </div>
               )
             }
@@ -34,7 +50,7 @@ export default ({ blocs, addBloc, history }) => {
       <BlocModal
         isOpen={modalOpen}
         toggleModal={setModalOpen}
-        handleSubmit={addBloc}
+        handleSubmit={submitBloc}
         bloc
       />
       <button

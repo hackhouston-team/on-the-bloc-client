@@ -10,21 +10,21 @@ export default ({
   const [text, setText] = useState('')
 
   return (
-    <div class={`modal ${isOpen ? 'is-active' : ''}`}>
-      <div class="modal-background" />
-      <div class="modal-card">
-        <header class="modal-card-head">
-          <p class="modal-card-title">{`Add a ${bloc ? 'Bloc' : 'message'}`}</p>
+    <div className={`modal ${isOpen ? 'is-active' : ''}`}>
+      <div className="modal-background" />
+      <div className="modal-card">
+        <header className="modal-card-head">
+          <p className="modal-card-title">{`Add a ${bloc ? 'Bloc' : 'message'}`}</p>
           <button
-            class="delete"
+            className="delete"
             aria-label="close"
             onClick={() => toggleModal(false)}
           />
         </header>
-        <section class="modal-card-body">
+        <section className="modal-card-body">
           {bloc ? (
             <input
-              class="input"
+              className="input"
               type="text"
               placeholder={'Enter Bloc text'}
               value={text}
@@ -32,7 +32,7 @@ export default ({
             />
           ) : (
             <textarea
-              class="textarea"
+              className="textarea"
               placeholder="Enter a message"
               rows="10"
               value={text}
@@ -40,9 +40,9 @@ export default ({
             />
           )}
         </section>
-        <footer class="modal-card-foot">
+        <footer className="modal-card-foot">
           <button
-            class="button is-success"
+            className="button is-success"
             onClick={() => {
               alert(`New ${bloc ? 'Bloc' : 'message'} ${text} has been added`)
               handleSubmit(text)
@@ -52,7 +52,7 @@ export default ({
           >
             Add
           </button>
-          <button class="button" onClick={() => setText('')}>
+          <button className="button" onClick={() => setText('')}>
             Clear
           </button>
         </footer>
