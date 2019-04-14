@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import BlocModal from './blocModal/blocModal';
+import BlocModal from '../modalForm/modalForm';
 
 export default ({ blocs, addBloc }) => {
   const [modalOpen, setModalOpen] = useState(false);
