@@ -59,12 +59,12 @@ class Navigation extends Component {
               </div>
               <div className="navbar-item">
                 <NavLink
-                  to="/jobs"
+                  to="/blocs"
                   className="is-medium is-link"
                   activeClassName="is-active"
                   exact={true}
                 >
-                  <p className="has-text-white">Jobs</p>
+                  <p className="has-text-white">Blocs</p>
                 </NavLink>
               </div>
             </div>

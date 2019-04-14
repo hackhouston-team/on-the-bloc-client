@@ -9,6 +9,7 @@ import Navigation from './components/navigation/navigation';
 // import Jobs from './components/jobs/jobs';
 import './App.css';
 import Login from './components/login/login';
+import Blocs from './components/bloc/blockList';
 
 class App extends Component {
   state = {
@@ -97,7 +98,7 @@ class App extends Component {
             />
           )}
         />
-        {/* <Route path="/jobs" exact={true} component={Jobs} /> */}
+        <Route path="/blocs" exact={true} component={Blocs} />
         {/* <Footer /> */}
       </div>
     );
