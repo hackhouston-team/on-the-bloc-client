@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 class ApiService {
-  baseUrl = `https://whatever.com/api/v1`;
+  baseUrl =  "https://on-the-bloc-api.herokuapp.com/api/v1"; 
   usersUrl = `${this.baseUrl}/users/`;
   blocsUrl = `${this.baseUrl}/blocs/`;
 
