@@ -5,15 +5,15 @@ import { Component } from 'react';
 import './navigation.css';
 
 class Navigation extends Component {
-   navToggle = () => {
+  navToggle = () => {
     // ! is a typescript hack, need to revist implementation
     document.querySelector('.navbar-menu').classList.toggle('is-active');
   };
 
-   render() {
+  render() {
     return (
       <nav
-        className="navbar has-background-info"
+        className="navbar has-bg-purple"
         role="navigation"
         aria-label="main navigation"
       >
@@ -27,7 +27,7 @@ class Navigation extends Component {
                   width="112"
                   height="28"
                 /> */}
-                <h1 className="title has-text-white">On The Bloc.</h1>
+                <h1 className="title has-text-white">On the Bloc.</h1>
               </Link>
             </div>
             <a
@@ -54,7 +54,7 @@ class Navigation extends Component {
                   activeClassName="is-active"
                   exact={true}
                 >
-                  <p className="has-text-white">Home</p>
+                  <p className="has-text-purple">Home</p>
                 </NavLink>
               </div>
               <div className="navbar-item">
@@ -64,13 +64,13 @@ class Navigation extends Component {
                   activeClassName="is-active"
                   exact={true}
                 >
-                  <p className="has-text-white">Blocs</p>
+                  <p className="has-text-purple">Jobs</p>
                 </NavLink>
               </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
     );
   }
 }

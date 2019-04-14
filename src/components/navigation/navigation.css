@@ -6929,12 +6929,21 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
-nav.navbar {
-  padding: 0.8rem 0;
-  box-shadow: 0px 1px 15px 0px gray; }
+.has-bg-purple {
+  background-color: #6c63ff !important; }
 
-nav .is-active {
-  border-bottom: 1px solid white; }
+.has-text-purple {
+  color: #6c63ff !important; }
 
-nav .navbar-item p:hover {
-  border-bottom: 1px solid white; }
+.navbar {
+  padding: 1.2rem 0; }
+  .navbar > .container {
+    padding: 0 10px; }
+
+.navbar-item img {
+  max-height: 3rem !important;
+  height: 52px !important;
+  width: 52px !important; }
+
+a.navbar-burger {
+  height: auto; }

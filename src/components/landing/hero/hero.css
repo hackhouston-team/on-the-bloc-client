@@ -1,0 +1,8 @@
+.hero-about {
+  background-image: url("./lock.svg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain; }
+
+.hero-jobs-gradient {
+  background-image: linear-gradient(to right top, #19b5fe, #3baaff, #679cff, #938bff, #bb74f7); }

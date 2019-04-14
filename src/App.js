@@ -11,6 +11,8 @@ import './App.css';
 import Login from './components/login/login';
 import Blocs from './components/bloc/blockList';
 import Bloc from './components/bloc/blocItem/blocItem';
+import Landing from './components/landing/landing'
+import Footer from './components/footer/footer'
 
 class App extends Component {
   state = {
@@ -56,7 +58,7 @@ class App extends Component {
     event.preventDefault();
     this.setState(
       () => ({ isSignedIn: false }),
-      () => blockstack.signUserOut(this.props.history.push('/homepage'))
+      () => blockstack.signUserOut(this.props.history.push('/'))
     );
   };
 
@@ -92,17 +94,18 @@ class App extends Component {
     return (
       <div>
         <Navigation />
-        <Route
+        <Route 
           path="/"
           exact={true}
-          render={props => (
-            <Login
+          render={(props) => {
+            return (
+              <Landing
               isSignedIn={isSignedIn}
               handleSignIn={this.handleSignIn}
               handleSignOut={this.handleSignOut}
-              {...props}
-            />
-          )}
+              {...props} />
+            )
+          }}
         />
         <Route path="/blocs" exact={true}
           render={
@@ -126,6 +129,8 @@ class App extends Component {
           }
         />
         {/* <Footer /> */}
+
+        <Footer />
       </div>
     );
   }

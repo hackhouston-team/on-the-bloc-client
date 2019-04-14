@@ -6928,3 +6928,9 @@ label.panel-block {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
+
+.has-bg-purple {
+  background-color: #6c63ff !important; }
+
+.has-text-purple {
+  color: #6c63ff !important; }

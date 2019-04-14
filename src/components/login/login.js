@@ -1,12 +1,14 @@
 import React from 'react'
 
+import './login.css'
+
 
 const Login = ({ isSignedIn, handleSignIn, handleSignOut }) => {
   return (
     <div className="has-text-centered">
       <p style={{ display: isSignedIn ? 'none' : 'block' }}>
         <button
-          className="button button-primary"
+          className="button button-custom is-medium"
           onClick={handleSignIn}
         >
           Sign-in with Blockstack
@@ -14,7 +16,7 @@ const Login = ({ isSignedIn, handleSignIn, handleSignOut }) => {
       </p>
       <p style={{ display: !isSignedIn ? 'none' : 'block' }}>
         <button
-          className="button button-primary"
+          className="button button-custom is-medium"
           onClick={handleSignOut}
         >
           Sign-out

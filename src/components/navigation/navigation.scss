@@ -1,18 +1,39 @@
+// @import '../../theme.scss';
+// nav {
+//   &.navbar {
+//     padding: 0.8rem 0;
+//     // border-bottom: 2px solid black;
+//     box-shadow: 0px 1px 15px 0px gray;
+//   }
+
+//   .is-active {
+//     border-bottom: 1px solid $white;
+//   }
+
+//   .navbar-item {
+//     p:hover {
+//       border-bottom: 1px solid $white;
+//     }
+//   }
+// }
+
+
 @import '../../theme.scss';
-nav {
-  &.navbar {
-    padding: 0.8rem 0;
-    // border-bottom: 2px solid black;
-    box-shadow: 0px 1px 15px 0px gray;
-  }
 
-  .is-active {
-    border-bottom: 1px solid $white;
-  }
+.navbar {
+  padding: 1.2rem 0;
 
-  .navbar-item {
-    p:hover {
-      border-bottom: 1px solid $white;
-    }
+  & > .container {
+    padding: 0 10px;
   }
+}
+
+.navbar-item img {
+  max-height: 3rem !important;
+  height: 52px !important;
+  width: 52px !important;
+}
+
+a.navbar-burger {
+  height: auto;
 }

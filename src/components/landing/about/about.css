@@ -1,0 +1,7 @@
+.column.is-vh-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+section.about-section {
+  padding: 0px; }

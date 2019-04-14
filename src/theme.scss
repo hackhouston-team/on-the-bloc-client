@@ -46,3 +46,12 @@ Taken from https://bulma.io/documentation/overview/customize/
 
 // 6. Import the rest of Bulma
 @import '../node_modules/bulma/bulma.sass';
+
+
+.has-bg-purple {
+  background-color: #6c63ff !important
+}
+
+.has-text-purple {
+  color: #6c63ff !important
+}
