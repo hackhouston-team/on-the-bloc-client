@@ -70,13 +70,10 @@ export default ({
         </>
       }
       <button
+        className="floating-btn"
         aria-label="add"
         onClick={() => setModalOpen(true)}
-        style={{
-          position: 'sticky',
-          left: '40px',
-          bottom: '40px'
-        }}
+
       >
         <span className="icon is-big">
           <i className="fas fa-plus"></i>

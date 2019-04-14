@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({name, content}) => {
+export default ({ name, content }) => {
   return (
     <div className="box box-is-75">
       <article className="media">
@@ -12,7 +12,7 @@ export default ({name, content}) => {
         <div className="media-content">
           <div className="content">
             <p>
-                <strong>
+              <strong>
                 {name}
               </strong>{' '}
               <br />
@@ -20,11 +20,11 @@ export default ({name, content}) => {
               <br />
               <br />
             </p>
-            <div className="is-pulled-right">
+            {/* <div className="is-pulled-right">
               <a href={""} className="button is-link">
                 Visit site
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </article>

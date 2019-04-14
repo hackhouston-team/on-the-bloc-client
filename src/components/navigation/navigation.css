@@ -6935,6 +6935,17 @@ label.panel-block {
 .has-text-purple {
   color: #6c63ff !important; }
 
+.floating-btn {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid  #6c63ff !important;
+  color: #6c63ff !important;
+  margin: 1em; }
+
 .navbar {
   padding: 1.2rem 0; }
   .navbar > .container {

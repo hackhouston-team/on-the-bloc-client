@@ -10,7 +10,7 @@ export default ({ addBloc, getBlocs, history }) => {
     () => {
       async function userBlocs() {
         const user = await (getBlocs('elyalamillo'));
-        
+
         if (user) {
           setBlocs(user.data.blocSummaries)
         }
@@ -29,7 +29,7 @@ export default ({ addBloc, getBlocs, history }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container" style={{ padding: '1em' }}>
         <div className="columns">
           <div className="column is-10 is-offset-1">
             {
@@ -38,8 +38,13 @@ export default ({ addBloc, getBlocs, history }) => {
                   key={bloc.id}
                   onClick={() => history.push(`/bloc/${bloc.id}`)}
                   className="box box-is-70">
+                  <p className="subtitle" style={{ fontSize: "0.8em" }}>Bloc name</p>
                   <p className="title is-4 is-spaced">{bloc.name}</p>
-                  <p className="is-spaced">{bloc.creator}</p>
+
+                  <p className="subtitle" style={{ fontSize: "0.8em" }}>User</p>
+                  <p className="title is-4 is-spaced">{bloc.creator}</p>
+
+                  <p className="subtitle" style={{ fontSize: "0.8em" }}>Total Messages</p>
                   <p className="title is-5 is-spaced">{bloc.messageCount}</p>
                 </div>
               )
@@ -54,13 +59,9 @@ export default ({ addBloc, getBlocs, history }) => {
         bloc
       />
       <button
+        className="floating-btn"
         aria-label="add"
         onClick={() => setModalOpen(true)}
-        style={{
-          position: 'absolute',
-          right: '40px',
-          bottom: '40px'
-        }}
       >
         <span className="icon is-big">
           <i className="fas fa-plus"></i>
