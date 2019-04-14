@@ -2,8 +2,8 @@ import axios from 'axios';
 
 class ApiService {
   baseUrl =  "https://on-the-bloc-api.herokuapp.com/api/v1"; 
-  usersUrl = `${this.baseUrl}/users/`;
-  blocsUrl = `${this.baseUrl}/blocs/`;
+  usersUrl = `${this.baseUrl}/users`;
+  blocsUrl = `${this.baseUrl}/blocs`;
 
   // user endpoints
   getUser = async id => {
