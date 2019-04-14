@@ -11,17 +11,15 @@ export default ({
   getBlocById
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [bloc, setBloc] = useState({})
+  const [bloc, setBloc] = useState(null)
 
   useEffect(() => {
     async function getBloc() {
-      const bloc = await (getBlocById('5cb2c9b6b0cdaf00042143ad'));
+      const bloc = await (getBlocById('5cb2d9b6cd408900044ac686'));
       setBloc(bloc);
     }
     getBloc();
   }, [])
-  
-  console.log({bloc})
 
   function handleSubmit(text) {
     addMessage({
@@ -30,9 +28,10 @@ export default ({
     })
   }
 
-  if (!blocName) {
-    blocName = 'Personal'
+  if (!bloc) {
+    return <div>No Bloc</div>
   }
+  console.log(bloc)
 
   if (!messages) {
     messages = [
@@ -66,15 +65,15 @@ export default ({
         toggleModal={setModalOpen}
         handleSubmit={handleSubmit}
       />
-      <h1 className="title is-1">{blocName}</h1>
+      <h1 className="title is-1">{bloc.name}</h1>
       <section className="section has-background-white-ter">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              {messages.map(message => (
+              {bloc.messages.map(message => (
                 <Message
                   key={message.id}
-                  name={message.name}
+                  name={message.creatorId}
                   content={message.content}
                 />
               ))}
