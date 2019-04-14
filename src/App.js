@@ -9,6 +9,8 @@ import Navigation from './components/navigation/navigation';
 // import Jobs from './components/jobs/jobs';
 import './App.css';
 import Login from './components/login/login';
+import Blocs from './components/bloc/blockList';
+import Bloc from './components/bloc/blocItem/blocItem';
 
 class App extends Component {
   state = {
@@ -68,6 +70,11 @@ class App extends Component {
   };
 
   // bloc methods
+  getBlocs = async id => {
+    return await apiService.getBlocs(id);
+  } 
+
+
   getBlocById = async id => {
     return await apiService.getBloc(id);
   };
@@ -97,7 +104,27 @@ class App extends Component {
             />
           )}
         />
-        {/* <Route path="/jobs" exact={true} component={Jobs} /> */}
+        <Route path="/blocs" exact={true}
+          render={
+            (props) => (
+              <Blocs
+                {...props}
+                getBlocs={this.getBlocs}
+                addBloc={this.createBloc}
+              />
+            )
+          } />
+        <Route path="/bloc/:id" exact={true}
+          render={
+            props => (
+              <Bloc
+                {...props}
+                getBlocById={this.getBlocById}
+                addMessage={this.addMessageToBloc}
+              />
+            )
+          }
+        />
         {/* <Footer /> */}
       </div>
     );

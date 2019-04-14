@@ -24,6 +24,11 @@ class ApiService {
     return data;
   };
 
+  // user's blocs
+  getBlocs = async id => {
+    return await axios.get(`${this.usersUrl}/${id}`)
+  }
+
   // creates a new bloc
   postBloc = async (creatorId, blocName) => {
     const { data } = await axios.post(`${this.blocsUrl}`, {
