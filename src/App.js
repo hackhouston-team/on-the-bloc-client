@@ -99,8 +99,26 @@ class App extends Component {
             />
           )}
         />
-        <Route path="/blocs" exact={true} component={Blocs} />
-        <Route path="/bloc/:id" exact={true} component={Bloc} />
+        <Route path="/blocs" exact={true}
+          render={
+            (props) => (
+              <Blocs
+                {...props}
+                addBloc={this.createBloc}
+              />
+            )
+          } />
+        <Route path="/bloc/:id" exact={true}
+          render={
+            props => (
+              <Bloc
+                {...props}
+                getBlocById={this.getBlocById}
+                addMessage={this.addMessageToBloc}
+              />
+            )
+          }
+        />
         {/* <Footer /> */}
       </div>
     );

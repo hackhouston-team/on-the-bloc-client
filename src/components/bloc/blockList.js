@@ -46,8 +46,8 @@ export default ({ blocs, addBloc, history }) => {
           bottom: '40px'
         }}
       >
-        <span class="icon is-big">
-          <i class="fas fa-plus"></i>
+        <span className="icon is-big">
+          <i className="fas fa-plus"></i>
         </span>
       </button>
     </>

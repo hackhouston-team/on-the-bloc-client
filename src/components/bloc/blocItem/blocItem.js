@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Message from '../blocMessage/blocMessage';
 import MessageModal from '../../modalForm/modalForm';
@@ -7,9 +7,21 @@ export default ({
   blocName,
   messages,
   addMessage,
-  match
+  match,
+  getBlocById
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [bloc, setBloc] = useState({})
+
+  useEffect(() => {
+    async function getBloc() {
+      const bloc = await (getBlocById('5cb2c9b6b0cdaf00042143ad'));
+      setBloc(bloc);
+    }
+    getBloc();
+  }, [])
+  
+  console.log({bloc})
 
   function handleSubmit(text) {
     addMessage({
@@ -79,8 +91,8 @@ export default ({
           bottom: '40px'
         }}
       >
-        <span class="icon is-big">
-          <i class="fas fa-plus"></i>
+        <span className="icon is-big">
+          <i className="fas fa-plus"></i>
         </span>
       </button>
     </>
