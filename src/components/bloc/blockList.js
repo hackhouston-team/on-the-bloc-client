@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import BlocModal from '../modalForm/modalForm';
 
-export default ({ blocs, addBloc }) => {
+export default ({ blocs, addBloc, history }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   if (!blocs) {
@@ -22,6 +22,7 @@ export default ({ blocs, addBloc }) => {
               blocs.map(bloc =>
                 <div
                   key={bloc.id}
+                  onClick={() => history.push(`/bloc/${bloc.id}`)}
                   className="box box-is-70">
                   <p className="title is-4 is-spaced">{bloc.name}</p>
                 </div>

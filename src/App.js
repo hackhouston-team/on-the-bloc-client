@@ -10,6 +10,7 @@ import Navigation from './components/navigation/navigation';
 import './App.css';
 import Login from './components/login/login';
 import Blocs from './components/bloc/blockList';
+import Bloc from './components/bloc/blocItem/blocItem';
 
 class App extends Component {
   state = {
@@ -99,6 +100,7 @@ class App extends Component {
           )}
         />
         <Route path="/blocs" exact={true} component={Blocs} />
+        <Route path="/bloc/:id" exact={true} component={Bloc} />
         {/* <Footer /> */}
       </div>
     );
