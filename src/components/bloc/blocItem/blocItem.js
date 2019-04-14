@@ -4,8 +4,6 @@ import Message from '../blocMessage/blocMessage';
 import MessageModal from '../../modalForm/modalForm';
 
 export default ({
-  blocName,
-  messages,
   addMessage,
   match,
   getBlocById
@@ -21,10 +19,18 @@ export default ({
     getBloc();
   }, [])
 
-  function handleSubmit(text) {
-    addMessage({
-      blocId: match.params.id,
-      content: text
+  async function handleSubmit(text) {
+    const newMessage = await addMessage(
+      bloc.creatorId,
+      bloc.id,
+      text
+    )
+    setBloc({
+      ...bloc,
+      messages: [
+        ...bloc.messages,
+        newMessage
+      ]
     })
   }
 

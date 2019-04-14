@@ -45,7 +45,7 @@ export default ({
             class="button is-success"
             onClick={() => {
               alert(`New ${bloc ? 'Bloc' : 'message'} ${text} has been added`)
-              {/* handleSubmit(text) */}
+              handleSubmit(text)
               toggleModal(false)
               setText('')
             }}
